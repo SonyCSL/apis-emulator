@@ -9,6 +9,7 @@ Emulatorは蓄電池や電力融通用DC/DC Converter等を含んだハードウ
 apis-mainはコンピュータ上で再現されたハードウェア環境から蓄電池の情報を読み取ったり
 DC/DC Converterを操作したりして電力融通のエミュレーションを行うことが可能である。
 
+![apis-emulator](https://user-images.githubusercontent.com/71874910/94903858-60973700-04d5-11eb-8d60-c0bdbbec9b4a.PNG)
 
 ## Getting Started
 
