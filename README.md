@@ -23,3 +23,4 @@ DC/DC Converterを操作したりして電力融通のエミュレーション�
 [Apache License Version 2.0](https://github.com/oes-github/apis-emulator/blob/master/LICENSE)
 
 ## Notice
+[Notice](https://github.com/oes-github/apis-emulator/blob/master/NOTICE.md)
