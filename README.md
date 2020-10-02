@@ -20,6 +20,6 @@ DC/DC Converterを操作したりして電力融通のエミュレーション�
 
 
 ## License
-
+[Apache License Version 2.0](https://github.com/oes-github/apis-emulator/blob/master/LICENSE)
 
 ## Notice
