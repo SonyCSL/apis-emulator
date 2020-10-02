@@ -18,8 +18,8 @@ class inputDataManager:
         #solarData=solarData
         #loadInputdata
         if inputSet=="Sample":
-            gl.startTime= pd.datetime(2012, 1, 1, 0, 0, 0)
-            gl.endTime= pd.datetime(2013, 1, 1, 0, 0, 0)
+            gl.startTime= pd.datetime(2020, 1, 1, 0, 0, 0)
+            gl.endTime= pd.datetime(2021, 1, 1, 0, 0, 0)
             gl.now = deepcopy(gl.startTime)
             #loadSample
             old_loadDemand_Sample()
