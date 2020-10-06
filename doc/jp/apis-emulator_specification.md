@@ -5,67 +5,67 @@
 **目次**
 ========
 
-[**1.** **用語・略語** 4][]
+[1.用語・略語](#anchor1)
 
-[**2.** **概要** 5][]
+[2.概要](#anchor2)
 
-[**3.** **ソフトウェア構成** 6][]
+[3.ソフトウェア構成](#anchor3)
 
-[**3. ソフトウェア概要** 6][]
+[3.1ソフトウェア概要](#anchor3-1)
 
-[**3.2.** **ソフトウェア接続構成** 7][]
+[3.2.ソフトウェア接続構成](#anchor3-2)
 
-[**4.** **機能説明** 8][]
+[4.機能説明](#anchor4)
 
-[**4.1.** **表示部** 8][]
+[4.1.表示部](#anchor4-1)
 
-[**4.2.** **制御部** 13][]
+[4.2.制御部](#anchor4-2)
 
-[**4.2.1.** **Bottle Web Server** 13][]
+[4.2.1.Bottle Web Server](#anchor4-2-1)
 
-[**4.2.2.** **Initialize OES Unit** 13][]
+[4.2.2.Initialize OES Unit](#anchor4-2-2)
 
-[**4.2.3.** **Input Data Manager** 13][]
+[4.2.3.Input Data Manager](#anchor4-2-3)
 
-[**4.2.4.** **Update Power Flow** 13][]
+[4.2.4.Update Power Flow](#anchor4-2-4)
 
-[**5.** **通信仕様** 14][]
+[5.通信仕様](#anchor5)
 
-[**5.1.** **User – Emulator間Web API** 14][]
+[5.1.User – Emulator間Web API](#anchor5-1)
 
-[**5.2.** **apis-main – Emulator間Web API** 15][]
+[5.2.apis-main – Emulator間Web API](#anchor5-2)
 
-[**6.** **蓄電システム情報** 16][]
+[6.蓄電システム情報](#anchor6)
 
-[**6.1.** **蓄電システムパラメータ** 16][]
+[6.1.蓄電システムパラメータ](#anchor6-1)
 
-[**7.** **設定ファイルについて** 19][]
+[7.設定ファイルについて](#anchor7)
 
-[**7.1.** **config.py** 19][]
+[7.1.config.py](#anchor7-1)
 
-[**7.2.** **config/logging.conf** 22][]
+[7.2.config/logging.conf](#anchor7-2)
 
-[**8.** **Log出力** 23][]
+[8.Log出力](#anchor8)
 
-[**8.1.** **Log Level** 23][]
+[8.1.Log Level](#anchor8-1)
 
-[**8.2.** **Log出力先** 23][]
+[8.2.Log出力先](#anchor8-2)
 
-[**9.** **日射量及び住宅の消費電力量サンプルデータ** 24][]
+[9.日射量及び住宅の消費電力量サンプルデータ](#anchor9)
 
-[**10.** **異常処理** 24][]
+[10.異常処理](#anchor10)
 
-[**11.** **セキュリティ** 25][]
+[11.セキュリティ](#anchor11)
 
-[**11.1.** **User-Emulator間通信セキュリティ** 25][]
+[11.1.User-Emulator間通信セキュリティ](#anchor11-1)
 
-[**11.2.** **apis-main-Emulator間通信セキュリティ** 25][]
+[11.2.apis-main-Emulator間通信セキュリティ](#anchor11-2)
 
-[**12.** **プライバシー** 25][]
+[12.プライバシー](#anchor12)
 
-[**13.** **OSSライセンス** 25][]
+[13.OSSライセンス](#anchor13)
 
-**用語・略語**
+**1.用語・略語**
 ==============
 
 <table><thead><tr class="header"><th><strong>用語</strong></th><th><strong>説明</strong></th></tr></thead><tbody><tr class="odd"><td>apis-main</td><td><p>自律分散制御を可能にする電力相互融通ソフトウェアである。</p><p>(詳細はapis-main仕様書を参照のこと)</p></td></tr><tr class="even"><td>EMU</td><td>Energy Management Unit : 蓄電システムを制御するデバイスである。</td></tr></tbody></table>
