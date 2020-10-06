@@ -20,6 +20,7 @@ DC/DC Converterを操作したりして電力融通のエミュレーション�
 
 
 ## Documentation
+[Documentation(JP)](https://github.com/SonyCSL/apis-emulator/blob/master/doc/jp/apis-emulator_specification.md)
 
 
 ## License
