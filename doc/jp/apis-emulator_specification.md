@@ -70,39 +70,35 @@
 
 <table><thead><tr class="header"><th><strong>用語</strong></th><th><strong>説明</strong></th></tr></thead><tbody><tr class="odd"><td>apis-main</td><td><p>自律分散制御を可能にする電力相互融通ソフトウェアである。</p><p>(詳細はapis-main仕様書を参照のこと)</p></td></tr><tr class="even"><td>EMU</td><td>Energy Management Unit : 蓄電システムを制御するデバイスである。</td></tr></tbody></table>
 
-**概要**
+**2.概要**
 ========
 
 Emulatorは蓄電池や電力融通用DC/DC Converter等を含んだハードウェア環境をコンピュータ上で再現し、日射量と住宅の消費電力量情報を読み込み、複数の住宅の発電と消費、蓄電池の充放電等の電力の流れをエミュレーションすることが可能である。さらにブラウザからEmulatorにアクセスすることで再現されたハードウェア環境のパラメータを容易に変更することができるため、リアルタイムに条件を変えてエミュレーションを実施することが可能である。また、apis-mainとの通信機能も有しており、apis-mainはコンピュータ上で再現されたハードウェア環境から蓄電池の情報を読み取ったりDC/DC Converterを操作したりして電力融通のエミュレーションを行うことが可能である。
 
 <img src="media/media/image1.png" style="width:5.90625in;height:2.07292in" />
 
-**ソフトウェア構成**
+**3.ソフトウェア構成**
 ====================
 
-**3. ソフトウェア概要**
+**3.1.ソフトウェア概要**
 -----------------------
 
 Emulatorのソフトウェア構成としては以下の図3-1で示すように表示部と制御部に分けることができる。表示部に関しては標準的な構成ではあるが、TPLテンプレートでWebコンテンツの構造を作成し、CSSにて飾り付けを行ってJavaScriptで画面に動きを持たせており、これらの機能を使ってUserのブラウザからのアクセスに対して画面を構築している。制御部に関してはWebアプリケーション作成用フレームワークであるPython Bottleを使用してWeb Serverを立てapis-mainやUserからのWeb APIアクセスに対して処理を行っている。Update Power Flowはコンピュータ上で生成された蓄電システム上で太陽光発電、住宅の消費、蓄電池への充放電等の電力の流れ等をエミュレーションする。Input Data Managerはエミュレーションに必要な日射量や住宅の消費電力量のデマンド等が記載されたCSVファイルを、Initialize OES Unitは蓄電システムの環境構築に必要なパラメータが記載れたJSONファイルをそれぞれ読み込み込みUpdate Power Flowにそれらの情報を渡す。
 
-　　　　　　　　　　　　　
+<img src="media/media/image2.png" style="width:4.95656in;height:2.63793in" />
 
-　　　<img src="media/media/image2.png" style="width:4.95656in;height:2.63793in" />
-
-　　　　　　　
-
-**ソフトウェア接続構成**
+**3.2ソフトウェア接続構成**
 ------------------------
 
 Emulatorのソフトウェア接続構成を以下の図3-2に示す。UserがEmulatorへWeb APIアクセスを行うと制御部のBottle Web Serverがそのリクエストを受け取る。UserからのリクエストがEmulator画面の表示だった場合には、表示部のTPLテンプレート、CSS、JavaScriptがUser側のブラウザにダウンロードされて画面が表示される。また、画面表示ではないリクエストの場合にはBottle Web Serverが必要な情報を集めてUserへ返す。制御部のInput Data Managerはエミュレーションに必要な日射量や住宅の消費電力量等の情報をCSVファイルから読み込み、変数や配列に情報を格納する。Update Power FlowはInput Data Managerが作成した情報を元に時間経過毎の発電やハードウェア環境の電力ロスを含めた消費、蓄電池への充放電の電力の流れ等をエミュレーションする。apis-mainのController ServiceはWeb APIを使用しBottle Web Server経由で、コンピュータ上に生成されたハードウェア環境と通信を行う。具体的には生成された蓄電池の残容量を取得し、DC/DC Converterを制御して疑似的な電力融通を実現する。
 
-　　<img src="media/media/image3.png" style="width:5.91389in;height:3.37917in" />
+<img src="media/media/image3.png" style="width:5.91389in;height:3.37917in" />
 
-1.  　**機能説明**
-    ==============
+**4.機能説明**
+==============
 
-    1.  **表示部**
-        ----------
+**4.1.表示部**
+----------
 
 図4-1にEmulatorの画面を示す。 図はE001, E002, E003はコンピュータ上に生成された3つの蓄電システムの情報を表示している。表示可能な蓄電システムの数はCSVファイルで読み込まれる住宅の電力消費情報数とEmulatorを動作させているコンピュータの性能で決まる。画面の左上のAuto Refresh にチェックを付けると各蓄電システムの情報がエミュレーション結果に基づいてアップデートされる。
 
@@ -110,99 +106,56 @@ Emulatorのソフトウェア接続構成を以下の図3-2に示す。UserがEm
 
 以下に画面に表示の最上部に表示されているチェックボックスとボタンについて説明する。
 
-\[Auto Refreshチェックボックス\]　
+\[Auto Refreshチェックボックス\]  
+チェック有 : エミュレーション結果に基づいて5秒毎に全蓄電システムの各情報のアップデートを行う。  
+チェック無 : 蓄電システム情報の各情報のアップデートは行わない。  
 
-チェック有 : エミュレーション結果に基づいて5秒毎に全蓄電システムの各情報の
+\[Read Allボタン\]  
+このボタンが押された時点でのエミュレーション結果に基づき全蓄電システムの各情報のアップデートを行う。
 
-アップデートを行う。
+\[Set Allボタン\]  
+以下の蓄電システムのパラメータは値を入力し設定を置き換えることが可能である。    
+-Charge discharge power  
+-rsoc  
+-ups output power  
+-pvc charge power  
+-Powermeter all  
+-Powermeter p2  
+-Status  
+-Grid current  
+-Grid voltage  
+-Droop ratio  
 
-チェック無 : 蓄電システム情報の各情報のアップデートは行わない。
+全蓄電システムに対してその時点で入力されている上記の値をエミュレーションのパラメータとして置き換える。(パラメータの説明は図4-2, 図4-3を参照のこと)  
 
-\[Read Allボタン\]
+\[Save Allボタン\]  
+エミュレーション中の全蓄電システムのパラメータをjsontmp/lastSave.jsonとして保存する。(保存されるパラメータは ”6.1蓄電システムパラメータ” を参照のこと)  
 
-　　このボタンが押された時点でのエミュレーション結果に基づき全蓄電システムの
+\[Load Lastボタン\]  
+jsontmp/lastSave.jsonに保存されている全蓄電システムのパラメータ値をエミュレーションのパラメータとして置き換える。  
 
-各情報のアップデートを行う。
+\[Resetボタン\]  
+jsontmp/fakeResponse.jsonに保存されている全蓄電システムのパラメータを読み込み、現在エミュレーション中の全蓄電システムと置き換える。その際に必要なパラメータは初期化される。  
 
-\[Set Allボタン\]
+\[Add Unitボタン\]  
+このボタンが押される毎にエミュレーションを行う蓄電システムを1台追加する。  
+蓄電システムのIDは通し番号が振られており、追加されるとIDの番号が1つ繰り上がる。 (E006が最後のIDの場合は追加されるとE007が振られる。)  
+追加の際にはjsontmp/standard.jsonに保存されている全蓄電システムの初期パラメータが読み込まれ必要なパラメータは初期化される。  
 
-以下の蓄電システムのパラメータは値を入力し設定を置き換えることが可能である。
+\[Remove Unitボタン\]  
+このボタンが押される毎にエミュレーションを行う蓄電システムを1台削除する。  
+最も大きな番号のIDが振られた蓄電システムから削除される。  
 
-　　　-Charge discharge power
+\[Set Acceleration Rateボタン\]  
+このボタンを押下すると、このボタンの右横で設定した数字によってエミュレーション世界の時間の進み具合を変更することができる。 (例えば”10”と設定した場合は実世界で1秒進む毎にエミュレーションの世界は10秒進ませることができる。)  
+以下に個別の蓄電システム情報内に存在するボタンについて説明する。  
 
--rsoc
+\[Read\]  
+ボタンが押された時点でのエミュレーション結果に基づきボタンを押下した蓄電システムの各情報のアップデートを行う。  
 
--ups output power
-
--pvc charge power
-
--Powermeter all
-
--Powermeter p2
-
--Status
-
--Grid current
-
--Grid voltage
-
--Droop ratio
-
-全蓄電システムに対してその時点で入力されている上記の値をエミュレーションの
-
-パラメータとして置き換える。(パラメータの説明は図4-2, 図4-3を参照のこと)
-
-\[Save Allボタン\]
-
-エミュレーション中の全蓄電システムのパラメータをjsontmp/lastSave.jsonとして
-
-保存する。(保存されるパラメータは ”6.1蓄電システムパラメータ” を参照のこと)
-
-\[Load Lastボタン\]
-
-> jsontmp/lastSave.jsonに保存されている全蓄電システムのパラメータ値をエミュレーションのパラメータとして置き換える。
-
-\[Resetボタン\]
-
-jsontmp/fakeResponse.jsonに保存されている全蓄電システムのパラメータを読み
-
-> 込み、現在エミュレーション中の全蓄電システムと置き換える。その際に必要なパラメータは初期化される。
-
-\[Add Unitボタン\]
-
-> このボタンが押される毎にエミュレーションを行う蓄電システムを1台追加する。
-
-蓄電システムのIDは通し番号が振られており、追加されるとIDの番号が1つ
-
-繰り上がる。 (E006が最後のIDの場合は追加されるとE007が振られる。)
-
-> 追加の際にはjsontmp/standard.jsonに保存されている全蓄電システムの
->
-> 初期パラメータが読み込まれ必要なパラメータは初期化される。
-
-\[Remove Unitボタン\]
-
-> このボタンが押される毎にエミュレーションを行う蓄電システムを1台削除する。
-
-最も大きな番号のIDが振られた蓄電システムから削除される。
-
-\[Set Acceleration Rateボタン\]
-
-このボタンを押下すると、このボタンの右横で設定した数字によってエミュレーション世界の時間の進み具合を変更することができる。 (例えば”10”と設定した場合は実世界で1秒進む毎にエミュレーションの世界は10秒進ませることができる。)
-
-以下に個別の蓄電システム情報内に存在するボタンについて説明する。
-
-\[Read\]
-
-> ボタンが押された時点でのエミュレーション結果に基づきボタンを押下した蓄電システムの各情報のアップデートを行う。
-
-\[Set\]
-
-ボタンを押下した蓄電システムに対してその時点で入力されている値をエミュレーショ
-
-ンのパラメータとして置き換える。(入力パラメータに関しては\[Set Allボタン\]参照)
-
-図4-2にEmulator上で疑似的に生成される蓄電システムのイメージ図を示す。
+\[Set\]  
+ボタンを押下した蓄電システムに対してその時点で入力されている値をエミュレーションのパラメータとして置き換える。(入力パラメータに関しては\[Set Allボタン\]参照)  
+図4-2にEmulator上で疑似的に生成される蓄電システムのイメージ図を示す。  
 
 <img src="media/media/image5.png" style="width:5.90694in;height:3.24444in" />
 
@@ -210,77 +163,59 @@ jsontmp/fakeResponse.jsonに保存されている全蓄電システムのパラ�
 
 <img src="media/media/image6.png" style="width:2.59236in;height:4.41389in" />
 
-1.  Charge discharge power
+① Charge discharge power  
+蓄電池の充放電の電力 \[W\] (絶対値)  
 
-　蓄電池の充放電の電力 \[W\] (絶対値)
+④ rsoc  
+蓄電池の相対残容量 \[%\]  
 
-②rsoc
+③ ups output power  
+UPSの出力電力 \[W\] (住宅消費電力相当)  
 
-蓄電池の相対残容量 \[%\]
+④ pvc charge power  
+PVCの発電電力 \[W\]  
 
-③ups output power
+⑤ Powermeter all  
+蓄電システム及び住宅の消費電力 \[W\]  
 
-　　UPSの出力電力 \[W\] (住宅消費電力相当)
+⑥ Powermeter p2  
+蓄電システムへの消費電力 \[W\]  
 
-④pvc charge power
+⑦ Status  
+DC/DC Converterのステータス  
 
-PVCの発電電力 \[W\]
+⑧ Grid current  
+DC Gridの最大電流 \[A\]  
 
-⑤Powermeter all
+⑨ Grid voltage  
+DC Gridのターゲット電圧 \[V\]  
 
-　蓄電システム及び住宅の消費電力 \[W\]
+⑩ Droop ratio  
+DC GridのDroop率 \[%\]  
 
-⑥Powermeter p2
+⑪ Grid power  
+Grid current x ⑬Grid voltage \[W\]  
 
-　　蓄電システムへの消費電力 \[W\]
+⑫ Grid current  
+DC Grid電流 \[A\]  
 
-⑦Status
+⑬ Grid voltage  
+DC Grid電圧 \[V\]  
 
-DC/DC Converterのステータス
+⑭ Battery power  
+⑮Battery current x ⑯Battery voltage \[W\]  
 
-⑧Grid current
+⑮ Battery current  
+蓄電池電流 \[A\]  
 
-DC Gridの最大電流 \[A\]
+⑯ Battery voltage  
+蓄電池電圧 \[V\]  
 
-⑨Grid voltage
+⑰ Battery Status  
+②蓄電池の相対残容量 \[%\]  
 
-DC Gridのターゲット電圧 \[V\]
-
-⑩Droop ratio
-
-DC GridのDroop率 \[%\]
-
-⑪Grid power
-
-⑫Grid current x ⑬Grid voltage \[W\]
-
-⑫Grid current
-
-DC Grid電流 \[A\]
-
-⑬Grid voltage
-
-DC Grid電圧 \[V\]
-
-⑭Battery power
-
-⑮Battery current x ⑯Battery voltage \[W\]
-
-⑮Battery current
-
-蓄電池電流 \[A\]
-
-⑯Battery voltage
-
-蓄電池電圧 \[V\]
-
-⑰Battery Status
-
-②蓄電池の相対残容量 \[%\]
-
-⑱Operating power
-
-DC/DC ConverterのLoss \[W\]
+⑱ Operating power  
+DC/DC ConverterのLoss \[W\]  
 
 1.  **制御部**
     ----------
