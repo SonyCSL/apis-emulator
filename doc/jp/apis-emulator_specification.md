@@ -292,9 +292,7 @@ UserがEmulatorに対して発行するWeb API ”/get/log” によって収集
 
 CSVファイルから読み込まれた日射量から発電量を求める式は以下となる。
 
-発電量 = 日射量(CSV) x PVパネル面積(default\_Area) x PVパネル変換効率(ｒ)
-
-x PVパネルパフォーマンス要素(pr)
+発電量 = 日射量(CSV) x PVパネル面積(default\_Area) x PVパネル変換効率(ｒ) x PVパネルパフォーマンス要素(pr)
 
 **7.2.config/logging.conf**
 -----------------------
@@ -323,11 +321,11 @@ CSVファイルなどの入力情報が読み込まれない場合等。
 警告として知らせる目的で用いられるLevelである。  
 Web APIで指定されたパラメータが不明だった場合等。  
 
-4.INFO  
+4. INFO  
 実行中の正常系の情報を出力する際に用いられるLevelである。  
 “ramping up finish”などの挙動情等を知らせる場合等。  
 
-5.DEBUG　
+5. DEBUG　
 Debug目的で用いられるLog Levelである。  
 EmulatorのDebug目的で使われる情報等。  
 
