@@ -93,7 +93,7 @@ Emulatorのソフトウェア構成としては以下の図3-1で示すように
 
 <img src="media/media/image2.png" style="width:4.95656in;height:2.63793in" />
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;図3-1
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;図3-1
 
 <a id="anchor3-2"></a>
 **3.2ソフトウェア接続構成**
