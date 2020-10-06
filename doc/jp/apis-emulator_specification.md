@@ -79,6 +79,8 @@ Emulatorは蓄電池や電力融通用DC/DC Converter等を含んだハードウ
 
 <img src="media/media/image1.png" style="width:5.90625in;height:2.07292in" />
 
+<p align="center">図2-1</p>
+
 <a id="anchor3"></a>
 **3.ソフトウェア構成**
 ====================
@@ -90,6 +92,7 @@ Emulatorは蓄電池や電力融通用DC/DC Converter等を含んだハードウ
 Emulatorのソフトウェア構成としては以下の図3-1で示すように表示部と制御部に分けることができる。表示部に関しては標準的な構成ではあるが、TPLテンプレートでWebコンテンツの構造を作成し、CSSにて飾り付けを行ってJavaScriptで画面に動きを持たせており、これらの機能を使ってUserのブラウザからのアクセスに対して画面を構築している。制御部に関してはWebアプリケーション作成用フレームワークであるPython Bottleを使用してWeb Serverを立てapis-mainやUserからのWeb APIアクセスに対して処理を行っている。Update Power Flowはコンピュータ上で生成された蓄電システム上で太陽光発電、住宅の消費、蓄電池への充放電等の電力の流れ等をエミュレーションする。Input Data Managerはエミュレーションに必要な日射量や住宅の消費電力量のデマンド等が記載されたCSVファイルを、Initialize OES Unitは蓄電システムの環境構築に必要なパラメータが記載れたJSONファイルをそれぞれ読み込み込みUpdate Power Flowにそれらの情報を渡す。
 
 <img src="media/media/image2.png" style="width:4.95656in;height:2.63793in" />
+<p align="center">図3-1</p>
 
 <a id="anchor3-2"></a>
 **3.2ソフトウェア接続構成**
@@ -98,6 +101,8 @@ Emulatorのソフトウェア構成としては以下の図3-1で示すように
 Emulatorのソフトウェア接続構成を以下の図3-2に示す。UserがEmulatorへWeb APIアクセスを行うと制御部のBottle Web Serverがそのリクエストを受け取る。UserからのリクエストがEmulator画面の表示だった場合には、表示部のTPLテンプレート、CSS、JavaScriptがUser側のブラウザにダウンロードされて画面が表示される。また、画面表示ではないリクエストの場合にはBottle Web Serverが必要な情報を集めてUserへ返す。制御部のInput Data Managerはエミュレーションに必要な日射量や住宅の消費電力量等の情報をCSVファイルから読み込み、変数や配列に情報を格納する。Update Power FlowはInput Data Managerが作成した情報を元に時間経過毎の発電やハードウェア環境の電力ロスを含めた消費、蓄電池への充放電の電力の流れ等をエミュレーションする。apis-mainのController ServiceはWeb APIを使用しBottle Web Server経由で、コンピュータ上に生成されたハードウェア環境と通信を行う。具体的には生成された蓄電池の残容量を取得し、DC/DC Converterを制御して疑似的な電力融通を実現する。
 
 <img src="media/media/image3.png" style="width:5.91389in;height:3.37917in" />
+
+<p align="center">図3-2</p>
 
 <a id="anchor4"></a>
 **4.機能説明**
@@ -110,6 +115,8 @@ Emulatorのソフトウェア接続構成を以下の図3-2に示す。UserがEm
 図4-1にEmulatorの画面を示す。 図はE001, E002, E003はコンピュータ上に生成された3つの蓄電システムの情報を表示している。表示可能な蓄電システムの数はCSVファイルで読み込まれる住宅の電力消費情報数とEmulatorを動作させているコンピュータの性能で決まる。画面の左上のAuto Refresh にチェックを付けると各蓄電システムの情報がエミュレーション結果に基づいてアップデートされる。
 
 <img src="media/media/image4.png" style="width:5.89653in;height:3.55694in" />
+
+<p align="center">図4-1</p>
 
 以下に画面に表示の最上部に表示されているチェックボックスとボタンについて説明する。
 
@@ -166,9 +173,13 @@ jsontmp/fakeResponse.jsonに保存されている全蓄電システムのパラ�
 
 <img src="media/media/image5.png" style="width:5.90694in;height:3.24444in" />
 
+<p align="center">図4-2</p>
+
 図4-3にEmulator画面の蓄電システム単体の情報画面を示す。情報画面の各パラメータに関して以下に説明する。(図4-2, 図4-3上に振られた番号と以下の説明の番号は一致する。)
 
 <img src="media/media/image6.png" style="width:2.59236in;height:4.41389in" />
+
+<p align="center">図4-3</p>
 
 ① Charge discharge power  
 &emsp;&emsp;蓄電池の充放電の電力 \[W\] (絶対値)  
