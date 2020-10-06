@@ -164,58 +164,58 @@ jsontmp/fakeResponse.jsonに保存されている全蓄電システムのパラ�
 <img src="media/media/image6.png" style="width:2.59236in;height:4.41389in" />
 
 ① Charge discharge power  
-蓄電池の充放電の電力 \[W\] (絶対値)  
+&emsp;&emsp;蓄電池の充放電の電力 \[W\] (絶対値)  
 
 ④ rsoc  
-蓄電池の相対残容量 \[%\]  
+&emsp;&emsp;蓄電池の相対残容量 \[%\]  
 
 ③ ups output power  
-UPSの出力電力 \[W\] (住宅消費電力相当)  
+&emsp;&emsp;UPSの出力電力 \[W\] (住宅消費電力相当)  
 
 ④ pvc charge power  
-PVCの発電電力 \[W\]  
+&emsp;&emsp;PVCの発電電力 \[W\]  
 
 ⑤ Powermeter all  
-蓄電システム及び住宅の消費電力 \[W\]  
+&emsp;&emsp;蓄電システム及び住宅の消費電力 \[W\]  
 
 ⑥ Powermeter p2  
-蓄電システムへの消費電力 \[W\]  
+&emsp;&emsp;蓄電システムへの消費電力 \[W\]  
 
 ⑦ Status  
-DC/DC Converterのステータス  
+&emsp;&emsp;DC/DC Converterのステータス  
 
 ⑧ Grid current  
-DC Gridの最大電流 \[A\]  
+&emsp;&emsp;DC Gridの最大電流 \[A\]  
 
 ⑨ Grid voltage  
-DC Gridのターゲット電圧 \[V\]  
+&emsp;&emsp;DC Gridのターゲット電圧 \[V\]  
 
 ⑩ Droop ratio  
-DC GridのDroop率 \[%\]  
+&emsp;&emsp;DC GridのDroop率 \[%\]  
 
 ⑪ Grid power  
-Grid current x ⑬Grid voltage \[W\]  
+&emsp;&emsp;Grid current x ⑬Grid voltage \[W\]  
 
 ⑫ Grid current  
-DC Grid電流 \[A\]  
+&emsp;&emsp;DC Grid電流 \[A\]  
 
 ⑬ Grid voltage  
-DC Grid電圧 \[V\]  
+&emsp;&emsp;DC Grid電圧 \[V\]  
 
 ⑭ Battery power  
-⑮Battery current x ⑯Battery voltage \[W\]  
+&emsp;&emsp;⑮Battery current x ⑯Battery voltage \[W\]  
 
 ⑮ Battery current  
-蓄電池電流 \[A\]  
+&emsp;&emsp;蓄電池電流 \[A\]  
 
 ⑯ Battery voltage  
-蓄電池電圧 \[V\]  
+&emsp;&emsp;蓄電池電圧 \[V\]  
 
 ⑰ Battery Status  
-②蓄電池の相対残容量 \[%\]  
+&emsp;&emsp;②蓄電池の相対残容量 \[%\]  
 
 ⑱ Operating power  
-DC/DC ConverterのLoss \[W\]  
+&emsp;&emsp;DC/DC ConverterのLoss \[W\]  
 
 1.  **制御部**
     ----------
