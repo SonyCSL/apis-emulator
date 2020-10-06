@@ -92,7 +92,8 @@ Emulatorは蓄電池や電力融通用DC/DC Converter等を含んだハードウ
 Emulatorのソフトウェア構成としては以下の図3-1で示すように表示部と制御部に分けることができる。表示部に関しては標準的な構成ではあるが、TPLテンプレートでWebコンテンツの構造を作成し、CSSにて飾り付けを行ってJavaScriptで画面に動きを持たせており、これらの機能を使ってUserのブラウザからのアクセスに対して画面を構築している。制御部に関してはWebアプリケーション作成用フレームワークであるPython Bottleを使用してWeb Serverを立てapis-mainやUserからのWeb APIアクセスに対して処理を行っている。Update Power Flowはコンピュータ上で生成された蓄電システム上で太陽光発電、住宅の消費、蓄電池への充放電等の電力の流れ等をエミュレーションする。Input Data Managerはエミュレーションに必要な日射量や住宅の消費電力量のデマンド等が記載されたCSVファイルを、Initialize OES Unitは蓄電システムの環境構築に必要なパラメータが記載れたJSONファイルをそれぞれ読み込み込みUpdate Power Flowにそれらの情報を渡す。
 
 <img src="media/media/image2.png" style="width:4.95656in;height:2.63793in" />
-<p align="center">図3-1</p>
+
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;図3-1
 
 <a id="anchor3-2"></a>
 **3.2ソフトウェア接続構成**
@@ -179,7 +180,7 @@ jsontmp/fakeResponse.jsonに保存されている全蓄電システムのパラ�
 
 <img src="media/media/image6.png" style="width:2.59236in;height:4.41389in" />
 
-<p align="center">図4-3</p>
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;図3-1
 
 ① Charge discharge power  
 &emsp;&emsp;蓄電池の充放電の電力 \[W\] (絶対値)  
