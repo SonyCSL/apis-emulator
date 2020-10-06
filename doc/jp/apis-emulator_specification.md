@@ -1,20 +1,6 @@
-**電力相互融通システム用ソフトウェア**
-
-**APIS (Autonomous Power Interchange System)**
-
-**Emulator仕様書**
-
+**apis-emulator仕様書**
+========================
 **Rev 0.54**
-
-2020年10月2日
-
-株式会社ソニーコンピュータサイエンス研究所
-
-SDGグループOESプロジェクト
-
-**改版履歴**
-
-<table><thead><tr class="header"><th><strong>日付</strong></th><th><strong>Rev.</strong></th><th><strong>担当</strong></th><th><strong>変更内容</strong></th></tr></thead><tbody><tr class="odd"><td>2020/9/2</td><td>0.5</td><td>岩瀬</td><td>初回リリース</td></tr><tr class="even"><td>2020/9/4</td><td>0.51</td><td>岩瀬</td><td>OEM Memberのコメント修正</td></tr><tr class="odd"><td>2020/10/1</td><td>0.52</td><td>岩瀬</td><td>OSS版の仕様に修正 (情報削除のみ)</td></tr><tr class="even"><td>2020/10/2</td><td>0.53</td><td>岩瀬</td><td><p>日射量や住宅毎の消費電力など、サンプル用CSVファイルのデータ様式についての説明を追加</p><p>“9. 日射量及び住宅の消費電力量のサンプルデータ”</p></td></tr><tr class="odd"><td>2020/10/2</td><td>0.54</td><td>岩瀬</td><td><p>“9. 日射量及び住宅の消費電力量のサンプルデータ”</p><p>-日射量 [Wh/m2] → [W/m2]</p><p>-消費電力量[kWh] → 消費電力[kW]</p></td></tr><tr class="even"><td></td><td></td><td></td><td></td></tr><tr class="odd"><td></td><td></td><td></td><td></td></tr><tr class="even"><td></td><td></td><td></td><td></td></tr><tr class="odd"><td></td><td></td><td></td><td></td></tr><tr class="even"><td></td><td></td><td></td><td></td></tr><tr class="odd"><td></td><td></td><td></td><td></td></tr><tr class="even"><td></td><td></td><td></td><td></td></tr><tr class="odd"><td></td><td></td><td></td><td></td></tr><tr class="even"><td></td><td></td><td></td><td></td></tr><tr class="odd"><td></td><td></td><td></td><td></td></tr><tr class="even"><td></td><td></td><td></td><td></td></tr><tr class="odd"><td></td><td></td><td></td><td></td></tr><tr class="even"><td></td><td></td><td></td><td></td></tr><tr class="odd"><td></td><td></td><td></td><td></td></tr></tbody></table>
 
 **目次**
 ========
