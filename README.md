@@ -23,7 +23,7 @@ $ git clone https://github.com/SonyCSL/apis-emulator.git
 ```bash
 $ cd apis-emulator
 $ python startEmul.py 3
-
+```
 
 ## Documentation
 &emsp;[apis-emulator_specification(JP)](https://github.com/SonyCSL/apis-emulator/blob/master/doc/jp/apis-emulator_specification.md)
