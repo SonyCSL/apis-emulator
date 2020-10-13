@@ -13,17 +13,16 @@ DC/DC Converterを操作したりして電力融通のエミュレーション�
 
 ![apis-emulator2](https://user-images.githubusercontent.com/71874910/94904048-ace27700-04d5-11eb-9dec-f144644dbf44.PNG)
 
-## Getting Started
+
+## Installation
 ```bash
-
-$ mkdir apis-emulator
-$ cd apis-emulator
 $ git clone https://github.com/SonyCSL/apis-emulator.git
-$ python startEmul.py 3
-
 ```
 
-## Usage
+## Running
+```bash
+$ cd apis-emulator
+$ python startEmul.py 3
 
 
 ## Documentation
