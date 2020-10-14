@@ -1,6 +1,6 @@
 **apis-emulator仕様書**
 ========================
-**Rev 0.54**
+**Rev 0.55**
 
 **目次**
 ========
@@ -421,7 +421,7 @@ Emulatorから取得できる情報はすべて疑似的に生成した情報で
 
 ■Emulatorで使用されるソフトウェアとそのOSSライセンス情報
 
-<table><thead><tr class="header"><td>ソフトウェア</td><td>バージョン</td><td>ライセンス</td><td>コード改変</td></tr></thead><tbody><tr class="odd"><td>Python</td><td>2.7.18</td><td>PSL License</td><td>無</td></tr><tr class="odd"><td>Python</td><td>2.7.18</td><td>PSL License</td><td>無</td></tr><tr class="even"><td>Requests</td><td>2.4.3</td><td>Apache License2.0</td><td>無</td></tr><tr class="odd"><td>pandas</td><td>0.14.1</td><td>BSD License</td><td>無</td></tr><tr class="even"><td>Bottle</td><td>0.12.8</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>jQuery</td><td>1.7.2</td><td><p>MIT Licenser or GPL v2 License</p><p>のどちらか選択</p></td><td>無</td></tr></tbody></table>
+<table><thead><tr class="header"><td>ソフトウェア</td><td>バージョン</td><td>ライセンス</td><td>コード改変</td></tr></thead><tbody><tr class="odd"><td>Python</td><td>2.7.18</td><td>PSL License</td><td>無</td></tr><tr class="odd"><td>tornado</td><td>6.0.3</td><td>Apache License2.0</td><td>無</td></tr><tr class="even"><td>Requests</td><td>2.4.3</td><td>Apache License2.0</td><td>無</td></tr><tr class="odd"><td>pandas</td><td>0.14.1</td><td>BSD License</td><td>無</td></tr><tr class="even"><td>Bottle</td><td>0.12.8</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>jQuery</td><td>1.7.2</td><td><p>MIT Licenser or GPL v2 License</p><p>のどちらか選択</p></td><td>無</td></tr></tbody></table>
 
 ※諸事情によりソフトウェアバージョンは変更される可能性があります。
 
