@@ -22,7 +22,7 @@ $ virtualenv apis-emulator
 $ source apis-emulator/bin/activate
 $ pip install tornado==5.1.1
 $ pip install bottle==0.12.8
-$ pip install requests=2.4.3
+$ pip install requests==2.4.3
 $ pip install pandas==0.14.1
 $ pip install netifaces==0.10.9
 $ deactivate
