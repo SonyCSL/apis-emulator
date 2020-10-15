@@ -1,6 +1,6 @@
 **apis-emulator仕様書**
 ========================
-**Rev 0.56**
+**Rev 0.57**
 
 **目次**
 ========
@@ -69,7 +69,7 @@
 **1.用語・略語**
 ==============
 
-<table><thead><tr class="header"><th><strong>用語</strong></th><th><strong>説明</strong></th></tr></thead><tbody><tr class="odd"><td>apis-main</td><td><p>自律分散制御を可能にする電力相互融通ソフトウェアである。</p><p>(詳細はapis-main仕様書を参照のこと)</p></td></tr><tr class="even"><td>EMU</td><td>Energy Management Unit : 蓄電システムを制御するデバイスである。</td></tr></tbody></table>
+<table><thead><tr class="header"><th><strong>用語</strong></th><th><strong>説明</strong></th></tr></thead><tbody><tr class="odd"><td>apis-main</td><td><p>自律分散制御を可能にするSony CSLが開発した電力相互融通ソフトウェアである。(詳細はapis-main仕様書を参照。)</p><p>(詳細はapis-main仕様書を参照のこと)</p></td></tr><tr class="even"><td>EMU</td><td>Energy Management Unit : 蓄電システムを制御するデバイスである。</td></tr></tbody></table>
 
 <a id="anchor2"></a>
 **2.概要**
