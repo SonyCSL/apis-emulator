@@ -15,6 +15,10 @@ DC/DC Converterを操作したりして電力融通のエミュレーション�
 
 
 ## Installation
+
+
+apis-emulator runs in Python2.7.
+
 ```bash
 $ git clone https://github.com/SonyCSL/apis-emulator.git
 $ cd apis-emulator
