@@ -32,6 +32,8 @@ $ deactivate
 ```
 
 ## Running
+Here is how to run apis-emulator individually.  
+
 ```bash
 $ cd apis-emulator
 $ source venv/bin/activate
