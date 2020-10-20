@@ -36,6 +36,7 @@ $ deactivate
 $ cd apis-emulator
 $ source venv/bin/activate
 $ python startEmul.py 4
+　(The last number is the number of hardware you want to emulate.)
 ```
 
 ## Documentation
