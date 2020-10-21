@@ -22,7 +22,7 @@ This software runs in Python2.7.
 $ git clone https://github.com/SonyCSL/apis-emulator.git
 $ cd apis-emulator
 $ virtualenv venv
-$ source venv/bin/activate
+$ . venv/bin/activate
 $ pip install -r requirements.txt
 $ deactivate
 ```
@@ -32,7 +32,7 @@ Here is how to run apis-emulator individually.
 
 ```bash
 $ cd apis-emulator
-$ source venv/bin/activate
+$ . venv/bin/activate
 $ python startEmul.py 4
 　(The last number is the number of hardware you want to emulate.)
 ```
