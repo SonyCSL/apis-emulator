@@ -15,28 +15,26 @@ DC/DC Converterを操作したりして電力融通のエミュレーション�
 
 
 ## Installation
-
-
-apis-emulator runs in Python2.7.
+Here is how to install apis-emulator individually.  
+This software runs in Python2.7.
 
 ```bash
 $ git clone https://github.com/SonyCSL/apis-emulator.git
 $ cd apis-emulator
-$ virtualenv apis-emulator
-$ source apis-emulator/bin/activate
-$ pip install tornado==5.1.1
-$ pip install bottle==0.12.8
-$ pip install requests==2.4.3
-$ pip install pandas==0.14.1
-$ pip install netifaces==0.10.9
+$ virtualenv venv
+$ source venv/bin/activate
+$ pip install -r requirements.txt
 $ deactivate
 ```
 
 ## Running
+Here is how to run apis-emulator individually.  
+
 ```bash
 $ cd apis-emulator
-$ source apis-emulator/bin/activate
-$ python startEmul.py 3
+$ source venv/bin/activate
+$ python startEmul.py 4
+　(The last number is the number of hardware you want to emulate.)
 ```
 
 ## Documentation
