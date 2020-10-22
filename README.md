@@ -37,6 +37,14 @@ $ python startEmul.py 4
 　(The last number is the number of hardware you want to emulate.)
 ```
 
+## Stopping
+Here is how to stop apis-emulator individually.  
+
+```bash
+$ bash stop.sh
+$ deactivate
+```
+
 ## Documentation
 &emsp;[apis-emulator_specification(JP)](https://github.com/SonyCSL/apis-emulator/blob/master/doc/jp/apis-emulator_specification.md)
 
