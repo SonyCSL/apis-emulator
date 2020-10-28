@@ -20,7 +20,7 @@ Here is how to install apis-emulator individually.
 ```bash
 $ git clone https://github.com/SonyCSL/apis-emulator.git
 $ cd apis-emulator
-$ virtualenv venv
+$ python -m venv venv 
 $ . venv/bin/activate
 $ pip install -r requirements.txt
 $ deactivate
