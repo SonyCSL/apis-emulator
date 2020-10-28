@@ -220,7 +220,7 @@ def setDcdcVoltages():
     auto = getAutonomous()
     value =0
 
-    if auto>=0 :
+    if auto != -1 :
         value=gl.oesunits[auto]["dcdc"]["vdis"]["dvg"]
 
     for i in gl.oesunits :
@@ -228,7 +228,7 @@ def setDcdcVoltages():
 
 def setDcdcCurrents():
     auto = getAutonomous()    
-    if auto>=0:
+    if auto != -1:
         sumI = 0
         for i in gl.oesunits :
             mode=gl.oesunits[i]["dcdc"]["status"]["status"]

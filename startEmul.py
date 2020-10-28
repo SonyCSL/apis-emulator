@@ -5,6 +5,7 @@ Created on Aug 3, 2015
 @author: annette
 
 '''
+from gevent import monkey; monkey.patch_all()
 import json, time, threading, logging.config, sys
 
 from bottle import route, run, template, static_file, request, response
@@ -105,10 +106,33 @@ def setJsonFile():
         logger.debug(gl.oesunits)
     return gl.oesunits
     
+def convert_dict_(src, keys):
+    dst = {}
+    for k in keys:
+        v = src.get(k)
+        if v is not None:
+            dst[k] = v
+    return dst
+def convert_dcdc_status_(src): return convert_dict_(src, ['status', 'alarmState', 'operationMode'])
+def convert_dcdc_meter_(src): return convert_dict_(src, ['wg', 'tmp', 'vb', 'wb', 'vg', 'ib', 'ig'])
+def convert_dcdc_vdis_(src): return convert_dict_(src, ['dvg', 'drg'])
+def convert_dcdc_param_(src): return convert_dict_(src, ['dig'])
+def convert_dcdc_(src):
+    dst = {}
+    if src.get('status') is not None: dst['status'] = convert_dcdc_status_(src['status'])
+    if src.get('meter') is not None: dst['meter'] = convert_dcdc_meter_(src['meter'])
+    if src.get('vdis') is not None: dst['vdis'] = convert_dcdc_vdis_(src['vdis'])
+    if src.get('param') is not None: dst['param'] = convert_dcdc_param_(src['param'])
+    return dst
+
 @route('/get/unit/<oesid>')
 def getRemote(oesid):
     response.content_type = 'application/json'
-    return gl.oesunits[oesid]
+    # return gl.oesunits[oesid]
+    result = {}
+    for k, v in gl.oesunits.get(oesid, {}).items():
+        result[k] = convert_dcdc_(v) if k == 'dcdc' else v
+    return result
 
 @route('/get/emu/<oesid>')
 def getRemoteEmu(oesid):
@@ -118,12 +142,17 @@ def getRemoteEmu(oesid):
 @route('/get/dcdc/status/<oesid>')
 def getDCDCStatus(oesid):
     response.content_type = 'application/json'
-    json={}
-    json["meter"]=gl.oesunits[oesid]["dcdc"]["meter"]
-    json["status"]={"runningState": gl.oesunits[oesid]["dcdc"]["status"]["runningState"],
-                    "operationMode": gl.oesunits[oesid]["dcdc"]["status"]["operationMode"],
-                    "alarmState": gl.oesunits[oesid]["dcdc"]["status"]["alarmState"]}
-    return json
+    # json={}
+    # json["meter"]=gl.oesunits[oesid]["dcdc"]["meter"]
+    # json["status"]={"runningState": gl.oesunits[oesid]["dcdc"]["status"]["runningState"],
+    #                 "operationMode": gl.oesunits[oesid]["dcdc"]["status"]["operationMode"],
+    #                 "alarmState": gl.oesunits[oesid]["dcdc"]["status"]["alarmState"]}
+    # return json
+    dcdc = gl.oesunits.get(oesid, {}).get('dcdc', {})
+    result = {}
+    if dcdc.get('status') is not None: result['status'] = convert_dcdc_status_(dcdc['status'])
+    if dcdc.get('meter') is not None: result['meter'] = convert_dcdc_meter_(dcdc['meter'])
+    return result
 
 @route('/get/dcdc/<oesid>')
 def getDCDC(oesid):
@@ -198,7 +227,8 @@ def setDcdc(oesid):
     else: 
         core.simulateMeter()
     
-    return gl.oesunits[oesid]["dcdc"]
+    # return gl.oesunits[oesid]["dcdc"]
+    return convert_dcdc_(gl.oesunits.get(oesid, {}).get('dcdc', {}))
 
 @route('/set/dcdc/voltage/<oesid>', method='GET')
 def setDcdcVoltage(oesid):
@@ -233,7 +263,12 @@ def setDcdcVoltage(oesid):
     else: 
         core.simulateMeter()
     
-    return {"meter":gl.oesunits[oesid]["dcdc"]["meter"],"vdis":gl.oesunits[oesid]["dcdc"]["vdis"]}
+    # return {"meter":gl.oesunits[oesid]["dcdc"]["meter"],"vdis":gl.oesunits[oesid]["dcdc"]["vdis"]}
+    dcdc = gl.oesunits.get(oesid, {}).get('dcdc', {})
+    result = {}
+    if dcdc.get('meter') is not None: result['meter'] = convert_dcdc_meter_(dcdc['meter'])
+    if dcdc.get('vdis') is not None: result['vdis'] = convert_dcdc_vdis_(dcdc['vdis'])
+    return result
 
 @route('/set/dcdc/current/<oesid>', method='GET')
 def setDcdcCurrent(oesid):
@@ -255,7 +290,12 @@ def setDcdcCurrent(oesid):
     
     core.simulateMeter()
     
-    return {"meter":gl.oesunits[oesid]["dcdc"]["meter"],"param":gl.oesunits[oesid]["dcdc"]["param"]}
+    # return {"meter":gl.oesunits[oesid]["dcdc"]["meter"],"param":gl.oesunits[oesid]["dcdc"]["param"]}
+    dcdc = gl.oesunits.get(oesid, {}).get('dcdc', {})
+    result = {}
+    if dcdc.get('meter') is not None: result['meter'] = convert_dcdc_meter_(dcdc['meter'])
+    if dcdc.get('param') is not None: result['param'] = convert_dcdc_param_(dcdc['param'])
+    return result
 
 
 
@@ -293,12 +333,12 @@ def initializeOESUnits(args):
     #   getInitJsonFile()
         
 def addNUnits(n):
-    for i in xrange(n) :
+    for i in range(n) :
         addUnit()
     logger.debug("starting off with "+str(n)+ " units.")
     
 def startWebServer():
-    run(server="tornado", host=conf.b_host, port=conf.b_port, quiet=False, reloader=False)
+    run(server='gevent', host=conf.b_host, port=conf.b_port, quiet=False, reloader=False)
     
              
 def main(args):
@@ -336,6 +376,3 @@ if __name__ == "__main__":
 
 
     main(sys.argv[1:])
-    
-
-    

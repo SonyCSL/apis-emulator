@@ -86,7 +86,7 @@ def old_demandUpdate_Sample():
     weight = count_h-int(count_h)
     step_now=int((count_h)/24),int((count_h)%24)
     step_next=(int((count_h+1)/24),int((count_h+1)%24))
-    if int(count_h+1) >= demand[gl.oesunits.keys()[0]].size:
+    if int(count_h+1) >= demand[next(iter(gl.oesunits))].size:
         logger.debug("no more demand data")
         return False
     for oesid in gl.oesunits:

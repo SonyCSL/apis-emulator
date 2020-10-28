@@ -45,12 +45,6 @@ $(function () {
 		setAll(id, true, true);
 	});
 
-	$( 'a[rel*=leanModal]').leanModal({
-        top: 40,
-        overlay : 0.5,
-        closeButton: ".modal_close"
-    });
-
 	$(".read_all").click(function () {
 		$.getJSON("./get/log", function (json) {
 			updateAllUnitForm(json);

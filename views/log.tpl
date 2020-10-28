@@ -9,7 +9,7 @@
 alert("Your browser does not support the canvas tag.");
 </script>
 <![endif]-->
-<script src="https://code.jquery.com/jquery-1.7.2.js" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-1.7.2.js" crossorigin="anonymous"></script>
 <script src="./js/main.js" type="text/javascript"></script>
 </head>
 <body>
