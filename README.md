@@ -20,7 +20,7 @@ Here is how to install apis-emulator individually.
 ```bash
 $ git clone https://github.com/SonyCSL/apis-emulator.git
 $ cd apis-emulator
-$ python -m venv venv 
+$ python3 -m venv venv 
 $ . venv/bin/activate
 $ pip install -r requirements.txt
 $ deactivate
@@ -32,7 +32,7 @@ Here is how to run apis-emulator individually.
 ```bash
 $ cd apis-emulator
 $ . venv/bin/activate
-$ python startEmul.py 4
+$ python3 startEmul.py 4
 　(The last number is the number of hardware you want to emulate.)
 ```
 
