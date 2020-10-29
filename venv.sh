@@ -9,5 +9,6 @@ fi
 
 $PYTHON -m venv venv
 . venv/bin/activate
+pip install --upgrade pip
 pip install wheel==0.30.0
 pip install -r requirements.txt
