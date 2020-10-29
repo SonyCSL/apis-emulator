@@ -3,3 +3,4 @@ gevent==20.9.0
 netifaces==0.10.9
 pandas==0.25.3
 requests==2.24.0
+wheel
