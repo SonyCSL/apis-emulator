@@ -45,7 +45,7 @@ def tryMultiple(fun, multiple, *args):
 #put all the helper functions here
 def convert(inputMsg):
     if isinstance(inputMsg, dict):
-        return {convert(key): convert(value) for key, value in inputMsg.iteritems()}
+        return {convert(key): convert(value) for key, value in inputMsg.items()}
     elif isinstance(inputMsg, list):
         return [convert(element) for element in inputMsg]
     # elif isinstance(inputMsg, unicode):
