@@ -199,7 +199,7 @@ def setDcdc(oesid):
         gl.oesunits[oesid]["dcdc"]["powermeter"]["p1"]=float(p1)
         gl.oesunits[oesid]["dcdc"]["powermeter"]["p2"]=float(p2)
     if len(mode)!=6 or len(dig)<1 or len(dvg)<1:
-        logger.warn("incorrect request")
+        logger.warning("incorrect request")
         return None
     
     dvg=int(float(dvg))
@@ -244,7 +244,7 @@ def setDcdcVoltage(oesid):
     logger.debug("setting voltage oesunit "+oesid+ "dvg="+dvg)
     status = gl.oesunits[oesid]["dcdc"]["status"]["status"]
     if len(dvg)<1:# :or status != "0x0014":
-        logger.warn("incorrect request ")#(emulator only allows this command for status=0x0014)")
+        logger.warning("incorrect request ")#(emulator only allows this command for status=0x0014)")
         return None
     
     dvg=int(float(dvg))
@@ -279,10 +279,10 @@ def setDcdcCurrent(oesid):
     logger.debug("setting current oesunit "+oesid+ "dig="+dig)
     #status = gl.oesunits[oesid]["dcdc"]["status"]["status"]
     if len(dig)<1 :
-        logger.warn("incorrect request")
+        logger.warning("incorrect request")
         return None
     #if (status=="0x0000" or status=="0x0014" ):
-    #    logger.warn("incorrect request (emulator only allows this command for status=0x0002 or 0x0041)")
+    #    logger.warning("incorrect request (emulator only allows this command for status=0x0002 or 0x0041)")
     #    return None
     
     gl.oesunits[oesid]["dcdc"]["param"]["dig"]=float(dig)
