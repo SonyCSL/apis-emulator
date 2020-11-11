@@ -1,13 +1,9 @@
 # apis-emulator
 
 ## Introduction
-Emulatorは蓄電池や電力融通用DC/DC Converter等を含んだハードウェア環境をコンピュータ上で再現し、
-日射量と住宅の消費電力量情報を読み込み、複数の住宅の発電と消費、蓄電池の充放電等の電力の流れを
-エミュレーションすることが可能である。さらにブラウザからEmulatorにアクセスすることで再現された
-ハードウェア環境のパラメータを容易に変更することができるため、リアルタイムに条件を変えて
-エミュレーションを実施することが可能である。また、apis-mainとの通信機能も有しており、
-apis-mainはコンピュータ上で再現されたハードウェア環境から蓄電池の情報を読み取ったり
-DC/DC Converterを操作したりして電力融通のエミュレーションを行うことが可能である。
+The Emulator runs a computer emulation that reproduces the hardware system for energy sharing, including the battery system and the DC/DC converter, etc. The Emulator reads in data on the amount of solar radiation and the power consumption of residences and emulates the flow of energy such as the power generated and consumed by multiple residences, and battery system charging and discharging. The emulation conditions can be changed in real time by using a Web browser to access and change the hardware parameters. There is also a function for communication with apis-main, which reads storage battery data from the hardware emulation on the computer and operates the DC/DC converter to emulate energy sharing.
+
+Refer to the [apis-emulator_specification](#anchor1)  for more information
 
 ![apis-emulator](https://user-images.githubusercontent.com/71874910/94903858-60973700-04d5-11eb-8d60-c0bdbbec9b4a.PNG)
 
@@ -44,7 +40,7 @@ Here is how to stop apis-emulator individually.
 $ bash stop.sh
 $ deactivate
 ```
-
+<a id="anchor1"></a>
 ## Documentation
 &emsp;[apis-emulator_specification(JP)](https://github.com/SonyCSL/apis-emulator/blob/master/doc/jp/apis-emulator_specification.md)
 
