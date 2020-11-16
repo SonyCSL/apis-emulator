@@ -42,6 +42,7 @@ $ deactivate
 ```
 <a id="anchor1"></a>
 ## Documentation
+&emsp;[apis-emulator_specification(EN)](https://github.com/SonyCSL/apis-emulator/blob/master/doc/en/apis-emulator_specification_en.md)  
 &emsp;[apis-emulator_specification(JP)](https://github.com/SonyCSL/apis-emulator/blob/master/doc/jp/apis-emulator_specification.md)
 
 
