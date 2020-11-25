@@ -274,20 +274,20 @@ The user performs browser operations to access Emulator via the Web API for info
 <td>For the processing, see section 4.1, “Display module”, [Save All button].</td>
 </tr>
 <tr class="even">
-<td>/get/emu/<oesid\></td>
-<td>Get the EMU parameters for the power storage system specified by <oesid\>.</td>
+<td>/get/emu/&lt;oesid&gt;</td>
+<td>Get the EMU parameters for the power storage system specified by &lt;oesid&gt;.</td>
 </tr>
 <tr class="odd">
 <td>/get/acc </td>
 <td>Get the time acceleration rate of the emulation world.</td>
 </tr>
 <tr class="even">
-<td>/set/acc/<newacc\></td>
+<td>/set/acc/&lt;newacc&gt;</td>
 <td>Set the time acceleration rate of the emulation world to the value specified by <newacc\>. For the processing, see section 4.1, “Display module”, [Set Acceleration Rate button].</td>
 </tr>
 <tr class="odd">
-<td>/set/emu/<oesid\></td>
-<td>Set the values specified by the query parameters as the EMU parameters for the power storage system specified by <oesid\>.</td>
+<td>/set/emu/&lt;oesid&gt;</td>
+<td>Set the values specified by the query parameters as the EMU parameters for the power storage system specified by &lt;oesid&gt;.</td>
 </tr>
 </tbody>
 </table>
