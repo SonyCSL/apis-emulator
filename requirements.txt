@@ -1,4 +1,4 @@
-wheel
+wheel==0.30.0
 bottle==0.12.18
 netifaces==0.10.9
 pandas==0.25.3
