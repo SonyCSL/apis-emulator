@@ -1,6 +1,6 @@
 **apis-emulator Specification Document**
 
-**Rev 0.60**
+**Rev 0.61**
 
 # **Contents**
 - [**Contents**](#contents)
@@ -933,42 +933,36 @@ The software used by Emulator and the corresponding OSS license information are 
 <td>None</td>
 </tr>
 <tr class="even">
-<td>gevent</td>
-<td>20.9.0</td>
-<td>MIT License</td>
-<td>None</td>
-</tr>
-<tr class="odd">
 <td>requests</td>
 <td>2.24.0</td>
 <td>Apache License2.0</td>
 <td>None</td>
 </tr>
-<tr class="even">
-<td>pandas</td>
-<td>0.25.3</td>
+<tr class="odd">
+<td>numpy</td>
+<td>1.19.4</td>
 <td>BSD License</td>
 <td>None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>bottle</td>
 <td>0.12.8</td>
 <td>MIT License</td>
 <td>None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>netifaces</td>
 <td>0.10.9</td>
 <td>MIT License</td>
 <td>None</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>wheel</td>
 <td>0.30.0</td>
 <td>MIT License</td>
 <td>None</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>jQuery</td>
 <td>1.7.2</td>
 <td><p>MIT License or GPL v2 License</p>
