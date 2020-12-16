@@ -5,7 +5,6 @@ Created on Aug 3, 2015
 @author: annette
 
 '''
-from gevent import monkey; monkey.patch_all()
 import json, time, threading, logging.config, sys
 
 from bottle import route, run, template, static_file, request, response
@@ -338,7 +337,7 @@ def addNUnits(n):
     logger.debug("starting off with "+str(n)+ " units.")
     
 def startWebServer():
-    run(server='gevent', host=conf.b_host, port=conf.b_port, quiet=False, reloader=False)
+    run(host=conf.b_host, port=conf.b_port, quiet=False, reloader=False)
     
              
 def main(args):

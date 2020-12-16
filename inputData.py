@@ -4,7 +4,8 @@ Created on Aug 6, 2015
 @author: annette
 '''
 
-import pandas as pd
+# import pandas as pd
+import numpy as np
 import logging.config, datetime
 from copy import deepcopy
 import global_var as gl
@@ -18,8 +19,8 @@ class inputDataManager:
         #solarData=solarData
         #loadInputdata
         if inputSet=="Sample":
-            gl.startTime= pd.datetime(2020, 1, 1, 0, 0, 0)
-            gl.endTime= pd.datetime(2021, 1, 1, 0, 0, 0)
+            gl.startTime= datetime.datetime(2020, 1, 1, 0, 0, 0)
+            gl.endTime= datetime.datetime(2021, 1, 1, 0, 0, 0)
             gl.now = deepcopy(gl.startTime)
             #loadSample
             old_loadDemand_Sample()
@@ -46,23 +47,65 @@ class inputDataManager:
     
 def loadSol_Sample():
     global sol
-    sol_data = pd.read_csv('data/input/Sample/sample_solar_data.csv')
-    sol = pd.np.array(sol_data) 
+    # sol_data = pd.read_csv('data/input/Sample/sample_solar_data.csv')
+    # sol = pd.np.array(sol_data) 
+
+    # print('#### sol ({}) ####'.format(len(sol)))
+    # for a in sol:
+    #   print(*a, sep=',')
+
+    sol = np.loadtxt('data/input/Sample/sample_solar_data.csv', delimiter=',')
+
+    # print('#### sol ({}) ####'.format(len(sol)))
+    # for a in sol:
+    #   print(*a, sep=',')
+
     return sol
 
 
 def old_loadDemand_Sample():
     global demand
-    demand = {}
-    demand_data = pd.read_csv('data/input/Sample/sample_load_data.csv')
+    # demand = {}
+    # demand_data = pd.read_csv('data/input/Sample/sample_load_data.csv')
 
-    cusids = set(demand_data.ix[:,1])
-    for i, cusid in enumerate(cusids):
-        # takes all values per userid with a step of 2 [colum 6 to 53]
-        demand_cusid = demand_data.ix[demand_data.ix[:,1]==cusid, range(6,len(demand_data.ix[0,:]),2)]
-        cus_id = "E{0:03d}".format(i+1)
-        demand[cus_id] = pd.np.array(demand_cusid)
+    # cusids = set(demand_data.ix[:,1])
+    # for i, cusid in enumerate(cusids):
+    #     # takes all values per userid with a step of 2 [colum 6 to 53]
+    #     demand_cusid = demand_data.ix[demand_data.ix[:,1]==cusid, range(6,len(demand_data.ix[0,:]),2)]
+    #     cus_id = "E{0:03d}".format(i+1)
+    #     demand[cus_id] = pd.np.array(demand_cusid)
+    #     gl.displayNames[cus_id]="Sample_"+cus_id
+
+    # print('#### cusids : {}'.format(cusids))
+    # for key in demand.keys():
+    #     a = demand[key]
+    #     print('#### demand[{}] ({})'.format(key, len(a)))
+    #     for aa in a:
+    #         print(*aa, sep=',')
+
+    demand = {}
+    # demand_data = np.genfromtxt('data/input/Sample/sample_load_data.csv', delimiter=',', names=True, dtype=None, encoding='utf-8')
+    cols = list(range(6, 52+1, 2))
+    cols.insert(0, 1)
+    demand_data = np.loadtxt('data/input/Sample/sample_load_data.csv', delimiter=',', skiprows=1, usecols=cols)
+    for row in demand_data:
+        cus_id = "E{0:03d}".format(int(row[0]))
+        if not demand.get(cus_id):
+            demand[cus_id] = []
+        demand[cus_id].append(row[1:])
+    for cus_id in demand:
+        demand[cus_id] = np.array(demand[cus_id])
         gl.displayNames[cus_id]="Sample_"+cus_id
+
+    # print('#### cols : {}'.format(cols))
+    # print('#### demand_data : {}'.format(demand_data))
+    # for key in demand.keys():
+    #     a = demand[key]
+    #     print('#### demand[{}] ({})'.format(key, len(a)))
+    #     for aa in a:
+    #         print(*aa, sep=',')
+
+
     return demand
 
 ######################

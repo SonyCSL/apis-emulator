@@ -1,7 +1,7 @@
 echo 'call stop.sh'
 
 get_pids() {
- ps -f -U `whoami` | grep startEmul.py | grep -v 'grep startEmul.py' | while read _USER_ _PID_ _OTHERS_ ; do
+ ps -f -U `whoami` | grep startEmul.py | grep -v 'grep startEmul.py' | grep -v 'stop.sh' | while read _USER_ _PID_ _OTHERS_ ; do
   echo $_PID_
  done
 }
