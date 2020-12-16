@@ -466,7 +466,7 @@ Emulatorから取得できる情報はすべて疑似的に生成した情報で
 
 ■Emulatorで使用されるソフトウェアとそのOSSライセンス情報
 
-<table><thead><tr class="header"><th>ソフトウェア</th><th>バージョン</th><th>ライセンス</th><th>コード改変</th></tr></thead><tbody><tr class="odd"><td>python</td><td>3.6.9</td><td>PSL License</td><td>無</td></tr><tr class="odd"><td>gevent</td><td>20.9.0</td><td>AMIT License</td><td>無</td></tr><tr class="even"><td>requests</td><td>2.24.0</td><td>Apache License2.0</td><td>無</td></tr><tr class="odd"><td>pandas</td><td>0.25.3</td><td>BSD License</td><td>無</td></tr><tr class="even"><td>Bottle</td><td>0.12.8</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>netifaces</td><td>0.10.9</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>wheel</td><td>0.30.0</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>jQuery</td><td>1.7.2</td><td><p>MIT Licenser or GPL v2 License</p><p>のどちらか選択</p></td><td>無</td></tr></tbody></table>
+<table><thead><tr class="header"><th>ソフトウェア</th><th>バージョン</th><th>ライセンス</th><th>コード改変</th></tr></thead><tbody><tr class="odd"><td>python</td><td>3.6.9</td><td>PSL License</td><td>無</td></tr><tr class="even"><td>requests</td><td>2.24.0</td><td>Apache License2.0</td><td>無</td></tr><tr class="odd"><td>numpy</td><td>1.19.4</td><td>BSD License</td><td>無</td></tr><tr class="even"><td>Bottle</td><td>0.12.8</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>netifaces</td><td>0.10.9</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>wheel</td><td>0.30.0</td><td>MIT License</td><td>無</td></tr><tr class="odd"><td>jQuery</td><td>1.7.2</td><td><p>MIT Licenser or GPL v2 License</p><p>のどちらか選択</p></td><td>無</td></tr></tbody></table>
 
 ※諸事情によりソフトウェアバージョンは変更される可能性があります。
 
