@@ -286,11 +286,11 @@ Userはブラウザを操作することで下記のWeb APIをEmulatorに対し�
 </tr>
 <tr class="odd">
 <td>/add/unit</td>
-<td>処理は4.1表示部の\[Add Unitボタン\]を参照のこと</td>
+<td>処理は4.1表示部の[Add Unitボタン]を参照のこと</td>
 </tr>
 <tr class="even">
 <td>/remove/unit</td>
-<td>処理は4.1表示部の\[Remove Unitボタン\]を参照のこと</td>
+<td>処理は4.1表示部の[Remove Unitボタン]を参照のこと</td>
 </tr>
 <tr class="odd">
 <td>/get/log</td>
@@ -298,11 +298,11 @@ Userはブラウザを操作することで下記のWeb APIをEmulatorに対し�
 </tr>
 <tr class="even">
 <td>/get/last</td>
-<td>処理は4.1表示部の\[Load Lastボタン\]を参照のこと</td>
+<td>処理は4.1表示部の[Load Lastボタン]を参照のこと</td>
 </tr>
 <tr class="odd">
 <td>/save</td>
-<td>処理は4.1表示部の\[Save Allボタン\]を参照のこと</td>
+<td>処理は4.1表示部の[Save Allボタン]を参照のこと</td>
 </tr>
 <tr class="even">
 <td>/get/emu/<oesid\></td>
@@ -314,7 +314,7 @@ Userはブラウザを操作することで下記のWeb APIをEmulatorに対し�
 </tr>
 <tr class="even">
 <td>/set/acc/<newacc\></td>
-<td>&lt;newacc&gt;で指定された値をエミュレーション世界の加速時間として設定する。処理は4.1表示部の\[Set Acceleration Rateボタン\]を参照のこと</td>
+<td>&lt;newacc&gt;で指定された値をエミュレーション世界の加速時間として設定する。処理は4.1表示部の[Set Acceleration Rateボタン]を参照のこと</td>
 </tr>
 <tr class="odd">
 <td>/set/emu/<oesid\></td>
