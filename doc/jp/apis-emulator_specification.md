@@ -282,7 +282,7 @@ Userはブラウザを操作することで下記のWeb APIをEmulatorに対し�
 </tr>
 <tr class="even">
 <td>/restart</td>
-<td>処理は4.1表示部の\[Resetボタン\]を参照のこと</td>
+<td>処理は4.1表示部の[Resetボタン]を参照のこと</td>
 </tr>
 <tr class="odd">
 <td>/add/unit</td>
